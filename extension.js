@@ -18,7 +18,7 @@ for(i in array) {
 var pickOptions = {
   matchOnDescription: true,
   matchOnDetail: true,
-  placeHolder: "Type emoji name"
+  placeHolder: "Type greek letter name"
 }
 
 function insertText(text) {
@@ -33,20 +33,13 @@ function insertText(text) {
 }
 
 function activate(context) {
-    var insertEmoji = vscode.commands.registerTextEditorCommand('emoji.indertEmoji', function () {
+    var insertGreek = vscode.commands.registerTextEditorCommand('greek.insertGreek', function () {
       vscode.window.showQuickPick(smilesOptions, pickOptions).then(function(item) {
         insertText(item.label)
       });
     });
 
-    var insertUnicode = vscode.commands.registerTextEditorCommand('emoji.insertUnicode', function () {
-      vscode.window.showQuickPick(smilesOptions, pickOptions).then(function(item) {
-        insertText('\\u' + item.unicode)
-      });
-    });
-
     context.subscriptions.push(insertEmoji);
-    context.subscriptions.push(insertUnicode);
 }
 exports.activate = activate;
 
