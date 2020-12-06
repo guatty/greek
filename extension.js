@@ -39,7 +39,7 @@ function activate(context) {
       });
     });
 
-    context.subscriptions.push(insertEmoji);
+    context.subscriptions.push(insertGreek);
 }
 exports.activate = activate;
 

@@ -26,12 +26,12 @@
         "Other"
     ],
     "activationEvents": [
-		"onCommand:emoji.insertGreek"
+		"onCommand:greek.insertGreek"
 	],
     "main": "./extension",
     "contributes": {
         "commands": [{
-            "command": "emoji.insertGreek",
+            "command": "greek.insertGreek",
             "title": "Greek: Insert greek character"
         }]
     },
